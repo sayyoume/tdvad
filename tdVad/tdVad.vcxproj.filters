@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common_audio">
+      <UniqueIdentifier>{ab9a9cc2-4f1e-4bbf-a07c-b889efc6f75f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base">
+      <UniqueIdentifier>{723890d3-dea6-4027-a857-c21ca33e6421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system_wrappers">
+      <UniqueIdentifier>{2acfeb08-c6e3-4cc4-8abf-7eb62d00dffd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system_wrappers\include">
+      <UniqueIdentifier>{35e08340-5591-4876-b786-44e26dd5dde9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base\numerics">
+      <UniqueIdentifier>{fe8ebaf8-62ae-4020-8255-ebd932c8dda5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\signal_processing">
+      <UniqueIdentifier>{caa36181-bf23-4ddc-b78e-3bbbef30fb15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\vad">
+      <UniqueIdentifier>{ef536247-7b49-43de-b401-2da8da55b9a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\signal_processing\include">
+      <UniqueIdentifier>{4208e2e6-44d2-4ef6-9983-561cbe3e92eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\vad\include">
+      <UniqueIdentifier>{e7893295-45cd-4434-8a60-3adf1152cf28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\vad\mock">
+      <UniqueIdentifier>{e64a44dd-93c1-48c2-974b-a343bed30348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\third_party">
+      <UniqueIdentifier>{569a7a69-fb2d-4817-b0e3-41b4b42ca506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_audio\third_party\spl_sqrt_floor">
+      <UniqueIdentifier>{39ca740e-326f-4712-a3a8-6fe9ae5d62d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base\system">
+      <UniqueIdentifier>{1f22bf3b-c194-473f-9594-8ea4ad83d254}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="tdVad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="rtc_base\checks.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\cross_correlation.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\division_operations.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\downsample_fast.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\energy.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\get_scaling_square.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\min_max_operations.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\resample_48khz.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\resample_by_2_internal.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\resample_fractional.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\spl_init.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\vector_scaling_operations.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\vad.cc">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\vad_core.c">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\vad_filterbank.c">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\vad_gmm.c">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\vad_sp.c">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\vad\webrtc_vad.c">
+      <Filter>common_audio\vad</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\dot_product_with_scale.cc">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\third_party\spl_sqrt_floor\spl_sqrt_floor.c">
+      <Filter>common_audio\third_party\spl_sqrt_floor</Filter>
+    </ClCompile>
+    <ClCompile Include="common_audio\signal_processing\spl_inl.c">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="system_wrappers\include\cpu_features_wrapper.h">
+      <Filter>system_wrappers\include</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\numerics\safe_compare.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\checks.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\compile_assert_c.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\sanitizer.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\type_traits.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\include\real_fft.h">
+      <Filter>common_audio\signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\include\signal_processing_library.h">
+      <Filter>common_audio\signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\include\spl_inl.h">
+      <Filter>common_audio\signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\include\spl_inl_armv7.h">
+      <Filter>common_audio\signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\include\spl_inl_mips.h">
+      <Filter>common_audio\signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\resample_by_2_internal.h">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\include\vad.h">
+      <Filter>common_audio\vad\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\include\webrtc_vad.h">
+      <Filter>common_audio\vad\include</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\mock\mock_vad.h">
+      <Filter>common_audio\vad\mock</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\vad_core.h">
+      <Filter>common_audio\vad</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\vad_filterbank.h">
+      <Filter>common_audio\vad</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\vad_gmm.h">
+      <Filter>common_audio\vad</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\vad\vad_sp.h">
+      <Filter>common_audio\vad</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\signal_processing\dot_product_with_scale.h">
+      <Filter>common_audio\signal_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="common_audio\third_party\spl_sqrt_floor\spl_sqrt_floor.h">
+      <Filter>common_audio\third_party\spl_sqrt_floor</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\numerics\safe_conversions.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\numerics\safe_conversions_impl.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\system\inline.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\system\rtc_export.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
