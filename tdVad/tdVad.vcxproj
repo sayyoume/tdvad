@@ -73,6 +73,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(SolutionDir)tdVad;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)bin</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -160,10 +161,14 @@
     <ClCompile Include="common_audio\vad\vad_gmm.c" />
     <ClCompile Include="common_audio\vad\vad_sp.c" />
     <ClCompile Include="common_audio\vad\webrtc_vad.c" />
+    <ClCompile Include="file_cut.cpp" />
+    <ClCompile Include="period_format.cpp" />
     <ClCompile Include="rtc_base\checks.cc" />
+    <ClCompile Include="simple_vad.cpp" />
     <ClCompile Include="tdVad.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common.h" />
     <ClInclude Include="common_audio\signal_processing\dot_product_with_scale.h" />
     <ClInclude Include="common_audio\signal_processing\include\real_fft.h" />
     <ClInclude Include="common_audio\signal_processing\include\signal_processing_library.h" />
@@ -179,6 +184,8 @@
     <ClInclude Include="common_audio\vad\vad_filterbank.h" />
     <ClInclude Include="common_audio\vad\vad_gmm.h" />
     <ClInclude Include="common_audio\vad\vad_sp.h" />
+    <ClInclude Include="file_cut.h" />
+    <ClInclude Include="period_format.h" />
     <ClInclude Include="rtc_base\checks.h" />
     <ClInclude Include="rtc_base\compile_assert_c.h" />
     <ClInclude Include="rtc_base\numerics\safe_compare.h" />
@@ -188,6 +195,7 @@
     <ClInclude Include="rtc_base\system\inline.h" />
     <ClInclude Include="rtc_base\system\rtc_export.h" />
     <ClInclude Include="rtc_base\type_traits.h" />
+    <ClInclude Include="simple_vad.h" />
     <ClInclude Include="system_wrappers\include\cpu_features_wrapper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

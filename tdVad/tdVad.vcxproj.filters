@@ -116,6 +116,15 @@
     <ClCompile Include="common_audio\signal_processing\spl_inl.c">
       <Filter>common_audio\signal_processing</Filter>
     </ClCompile>
+    <ClCompile Include="file_cut.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="period_format.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="simple_vad.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="system_wrappers\include\cpu_features_wrapper.h">
@@ -192,6 +201,18 @@
     </ClInclude>
     <ClInclude Include="rtc_base\system\rtc_export.h">
       <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="file_cut.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="period_format.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="simple_vad.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
