@@ -110,111 +110,85 @@ using namespace std;
 
 typedef struct sAudioData
 {
-	short* buffer;
+	char* buffer;
 	int  iSize;
 }SAUDIODATA;
 
 int main()
 {
-	//for (int i =0 ;i<5;i++)
-	//{
-	//	int nRead1 = 160;
-	//	sAudioData* data = new sAudioData;
-	//	data->buffer = new short[nRead1];
-	//}
-	//
 
 	std::vector<SAUDIODATA*> vec;
 
 	VadInst* vadInst = WebRtcVad_Create();
 	WebRtcVad_Init(vadInst);
 	WebRtcVad_set_mode(vadInst, 2);
-
-
-	const char filename[] = "D:\\td_work\\tdvad\\pcm\\new_mp3.mp3"; // 读取的文件
+	
+	std::wstring sFileName = L"D:\\td_work\\tdvad\\pcm\\new_mp3.mp3";
 	FILE* fp = nullptr;
-	fopen_s(&fp,filename, "rb");
-
-	//short* buff = nullptr;
-
+	_wfopen_s(&fp,sFileName.c_str(), L"rb");
+	
 	if (fp != nullptr)
 	{
 		fseek(fp, 0, SEEK_END);
 		long fileSize = ftell(fp);
 		fseek(fp, 0, SEEK_SET);
-		{
-			char* buff = new char[fileSize];
-			memset(buff, 0, fileSize);
-
-			int nRead = fread(buff, sizeof(char), fileSize, fp);
-
-			const char dst[] = "D:\\td_work\\tdvad\\pcm\\new_mp3_1111111.mp3"; // 读取的文件
-			FILE* fpdst = nullptr;
-			fopen_s(&fpdst, dst, "wb");
-			fwrite(buff, sizeof(char), nRead, fpdst);
-			fclose(fp);
-			fclose(fpdst);
-			int ii = 3;
-		}
-		{
-			short* buff = new short[fileSize];
-			memset(buff, 0, fileSize);
-
-			int nRead = fread(buff, sizeof(short), fileSize, fp);
-
-			const char dst[] = "D:\\td_work\\tdvad\\pcm\\new_mp3_1111111.mp3"; // 读取的文件
-			FILE* fpdst = nullptr;
-			fopen_s(&fpdst, dst, "wb");
-			fwrite(buff, nRead, 1, fpdst);
-
-			fclose(fpdst);
-			int ii = 3;
-		}
-		//int nCount = 0;
+		
 		while (!feof(fp))
 		{
-			//short*  buff = (short*)malloc(160);
-			short* buff = new short[160];
-			memset(buff, 0, 160);
-
-			int nRead = fread(buff, sizeof(short), 160, fp);
-			//nCount += nRead;
-
+			
+			char* buff = new char[320];
+			memset(buff, 0, 320);
+			int nRead = fread(buff, sizeof(char), 320, fp);
 			SAUDIODATA* data = new SAUDIODATA;
-			data->buffer = new short[nRead];
+			data->buffer = new char[nRead];
 			memset(data->buffer, 0, nRead);
 			memcpy(data->buffer, buff, nRead);
 			data->iSize = nRead;
 
 			vec.push_back(data);
 
-
-			//int status = WebRtcVad_Process(vadInst, SAMPLE_RATE, buff, nRead);
-			//if (status == -1)
-			//{
-			//	printf("WebRtcVad_Process is error\n");
-			//	return 0;
-			//}
-			//if (status == 1) {
-			//	//fwrite(audioFrame, sizeof(short), read_size, fpOutput);
-			//	//fflush(fpOutput);
-			//}
+			
 
 		}
 
 	}
 
-	const char dst[] = "D:\\td_work\\tdvad\\pcm\\new_mp3_1111111.mp3"; // 读取的文件
+	const char dst[] = "D:\\pdb\\new_mp3_1111111.mp3"; // 读取的文件
 	FILE* fpdst = nullptr;
 	fopen_s(&fpdst, dst, "wb");
 
+
+	bool bActive = true;
 	for (auto it : vec)
 	{
 		SAUDIODATA* data = it;
-		fwrite(data->buffer, data->iSize, 1, fpdst);
+		short* shortBUff = new short[data->iSize / 2];
+		memset(shortBUff, 0, data->iSize / 2);
+		memcpy(shortBUff, data->buffer, data->iSize);
+
+		int status = WebRtcVad_Process(vadInst, SAMPLE_RATE, shortBUff, data->iSize /2);
+		if (status == -1)
+		{
+			printf("WebRtcVad_Process is error\n");
+			return 0;
+		}
+		if (status == 1) { //有语音
+
+
+			bActive = true;
+			//fwrite(audioFrame, sizeof(short), read_size, fpOutput);
+			//fflush(fpOutput);
+		}
+		if (status == 0) {//静音
+
+
+			bActive = false;
+		}
+
+		fwrite(shortBUff, sizeof(short), data->iSize/2, fpdst);
 	}
 	fclose(fpdst);
 	fclose(fp);
 
-	//WebRtcVad_Free(vadInst);
+	WebRtcVad_Free(vadInst);
 }
