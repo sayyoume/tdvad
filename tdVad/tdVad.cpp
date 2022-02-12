@@ -10,6 +10,9 @@
 #include "period_format.h"
 #include "file_cut.h"
 #include <map>
+#include <windows.h>
+#include <tchar.h>
+#include <shlwapi.h>
 
 using namespace std;
 #define  DEFMODE 4
@@ -110,23 +113,151 @@ int add_period_activity(struct periods* per, int is_active, int is_last) {
 	}
 }
 
+std::string ws2s(const std::wstring& wide)
+{
+	int wide_length = static_cast<int>(wide.length());
+	if (wide_length == 0)
+		return std::string();
+
+	// Compute the length of the buffer we'll need.
+	int charcount = WideCharToMultiByte(CP_UTF8, 0, wide.data(), wide_length,
+		NULL, 0, NULL, NULL);
+	if (charcount == 0)
+		return std::string();
+
+	std::string mb;
+	mb.resize(charcount);
+	WideCharToMultiByte(CP_UTF8, 0, wide.data(), wide_length,
+		&mb[0], charcount, NULL, NULL);
+
+	return mb;
+}
+
+std::wstring s2ws(const std::string& mb)
+{
+	if (mb.empty())
+		return std::wstring();
+
+	int mb_length = static_cast<int>(mb.length());
+	// Compute the length of the buffer.
+	int charcount = MultiByteToWideChar(CP_UTF8, 0,
+		mb.data(), mb_length, NULL, 0);
+	if (charcount == 0)
+		return std::wstring();
+
+	std::wstring wide;
+	wide.resize(charcount);
+	MultiByteToWideChar(CP_UTF8, 0, mb.data(), mb_length, &wide[0], charcount);
+
+	return wide;
+}
+
+
+std::wstring getCurrentPath() {
+	WCHAR szPath[MAX_PATH] = { 0 };
+	GetModuleFileName(NULL, szPath, MAX_PATH);
+	PathRemoveFileSpec(szPath);
+	return szPath;
+}
+
+std::wstring getConfigString(std::wstring wsSection, std::wstring key)
+{
+	WCHAR szPath[MAX_PATH] = { 0 };
+	GetModuleFileName(NULL, szPath, MAX_PATH);
+	PathRemoveFileSpec(szPath);
+	std::wstring wsPath = szPath;
+	wsPath.append(L"\\config.ini");
+
+
+	wchar_t wsIp[256] = { 0 };
+	GetPrivateProfileString(wsSection.c_str(), key.c_str(), L"", wsIp, sizeof(wsIp), wsPath.c_str());
+	return wsIp;
+}
+
 typedef struct sAudioData
 {
 	char* buffer;
 	int  iSize;
 }SAUDIODATA;
 
+
+void pcm_2_mp3(std::string sSrcName,std::string sDstName)
+{
+	std::wstring wsSrc = s2ws(sSrcName);
+	std::wstring wsDst = s2ws(sDstName);
+
+	std::wstring wsFFmpeg = getCurrentPath() + L"\\ffmpeg.exe";
+
+	wchar_t wsparam[MAX_PATH];
+	swprintf_s(wsparam, L"-y -f s16be -ac 1 -ar 16000 -acodec pcm_s16le -i \"%s\"  \"%s\"", wsSrc.c_str(), wsDst.c_str());
+
+	SHELLEXECUTEINFO ShExecInfo = { 0 };
+	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+	ShExecInfo.hwnd = NULL;
+	ShExecInfo.lpVerb = NULL;
+	ShExecInfo.lpFile = wsFFmpeg.c_str();
+	ShExecInfo.lpParameters = wsparam;
+	ShExecInfo.lpDirectory = NULL;
+	ShExecInfo.nShow = SW_HIDE;
+	ShExecInfo.hInstApp = NULL;
+	ShellExecuteEx(&ShExecInfo);
+	WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+}
+
+void mp3_2_pcm(std::wstring sSrcName, std::wstring sDstName)
+{
+	std::wstring wsFFmpeg = getCurrentPath() + L"\\ffmpeg.exe";
+	wchar_t wsparam[MAX_PATH];
+	swprintf_s(wsparam, L"-y -i \"%s\"  -f s16be -ac 1 -ar 16000 -acodec pcm_s16le    \"%s\"", sSrcName.c_str(), sDstName.c_str());
+
+	SHELLEXECUTEINFO ShExecInfo = { 0 };
+	ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+	ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
+	ShExecInfo.hwnd = NULL;
+	ShExecInfo.lpVerb = NULL;
+	ShExecInfo.lpFile = wsFFmpeg.c_str();
+	ShExecInfo.lpParameters = wsparam;
+	ShExecInfo.lpDirectory = NULL;
+	ShExecInfo.nShow = SW_HIDE;
+	ShExecInfo.hInstApp = NULL;
+	ShellExecuteEx(&ShExecInfo);
+	WaitForSingleObject(ShExecInfo.hProcess, INFINITE);
+}
+
 int main()
 {
+	std::vector<std::string> vecPcmName;
 	std::vector<SAUDIODATA*> vec;
-
 	VadInst* vadInst = WebRtcVad_Create();
 	WebRtcVad_Init(vadInst);
 	WebRtcVad_set_mode(vadInst, DEFMODE);
+	std::wstring sSrcPath = getConfigString(L"CONFIG",L"path");
+
+	int n_no_pot = sSrcPath.find_last_of(L".");
+	std::wstring ws_pcm_no_pot_name = sSrcPath.substr(0, n_no_pot);
 	
-	std::wstring sFileName = L"D:\\pdb\\16k_1.pcm";
+	std::wstring ws_pcm_name = ws_pcm_no_pot_name;
+	ws_pcm_name.append(L".pcm");
+	mp3_2_pcm(sSrcPath, ws_pcm_name);
+
+
+	//path
+	int nnpos = ws_pcm_no_pot_name.find_last_of(L"\\");
+	std::wstring tmp = ws_pcm_no_pot_name.substr(nnpos + 1, ws_pcm_no_pot_name.length());
+
+	int npos = sSrcPath.find_last_of(L"\\");
+	std::wstring wspath = sSrcPath.substr(0,npos+1);
+	wspath.append(tmp);
+	wspath.append(L"_item\\");
+	CreateDirectory(wspath.c_str(), nullptr);
+
+	
+	wspath.append(tmp);
+	wspath.append(L"_%d.pcm");
+	
 	FILE* fp = nullptr;
-	_wfopen_s(&fp,sFileName.c_str(), L"rb");
+	_wfopen_s(&fp, ws_pcm_name.c_str(), L"rb");
 	
 	if (fp != nullptr)
 	{
@@ -149,24 +280,20 @@ int main()
 			vec.push_back(data);
 		}
 	}
-
-	const char dst[] = "D:\\pdb\\new_mp3_1111111.pcm"; // 读取的文件
-	FILE* fpdst = nullptr;
-	fopen_s(&fpdst, dst, "wb");
+	fclose(fp);
 
 
-	//std::map<int, std::vector<SAUDIODATA>> m_map;
-	bool bActive = true;
-	bool bOldActive = true;
+	bool bActive = false;
+	bool bOldActive = false;
 	int ii = 0;
 	std::vector<SAUDIODATA*> vectmp;
 	for (auto it : vec)
 	{
 		
 		if (bActive != bOldActive && bActive == false) {
-
+			std::string spath = ws2s(wspath);
 			char dst[245]{};
-			sprintf_s(dst, "D:\\pdb\\new_1111111_%d.pcm", ++ii);
+			sprintf_s(dst, spath.c_str(), ++ii);
 			FILE* fdsttemp = nullptr;
 			fopen_s(&fdsttemp, dst, "wb");
 
@@ -176,8 +303,8 @@ int main()
 				fwrite(data->buffer, sizeof(char), data->iSize, fdsttemp);
 			}
 			fclose(fdsttemp);
-
 			vectmp.clear();
+			vecPcmName.push_back(dst);
 		}
 		
 		bOldActive = bActive;
@@ -190,7 +317,18 @@ int main()
 		int status = WebRtcVad_Process(vadInst, SAMPLE_RATE, shortBUff, data->iSize /2);
 		if (status == -1)
 		{
-			printf("WebRtcVad_Process is error\n");
+			for (auto it : vecPcmName)
+			{
+				int npos = it.find_last_of(".");
+				std::string dst = it.substr(0, npos);
+				dst.append(".mp3");			
+				pcm_2_mp3(it, dst);
+				
+				DeleteFileA(it.c_str());
+
+			}
+
+			DeleteFile(ws_pcm_name.c_str());
 			return 0;
 		}
 		if (status == 1) { //有语音
@@ -203,16 +341,19 @@ int main()
 
 			vectmp.push_back(datat);
 			bActive = true;
-			//fwrite(audioFrame, sizeof(short), read_size, fpOutput);
-			//fflush(fpOutput);
+			
 		}
 		if (status == 0) {//静音
 			bActive = false;
 		}
-		fwrite(shortBUff, sizeof(short), data->iSize/2, fpdst);
+	
 	}
-	fclose(fpdst);
-	fclose(fp);
-
+	
 	WebRtcVad_Free(vadInst);
+
+
+
+	
+
+
 }

@@ -136,9 +136,6 @@
     <ClInclude Include="rtc_base\checks.h">
       <Filter>rtc_base</Filter>
     </ClInclude>
-    <ClInclude Include="rtc_base\compile_assert_c.h">
-      <Filter>rtc_base</Filter>
-    </ClInclude>
     <ClInclude Include="rtc_base\sanitizer.h">
       <Filter>rtc_base</Filter>
     </ClInclude>
@@ -212,6 +209,9 @@
       <Filter>源文件</Filter>
     </ClInclude>
     <ClInclude Include="simple_vad.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rtc_base\compile_assert_c.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
