@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <Font name="微软雅黑" size="12" bold="false" default="true" />
+  <Default name="Menu" value="inset=&quot;2,1,2,1&quot; itemtextpadding=&quot;20,5,20,5&quot; bkcolor=&quot;0xfff8fcff&quot; hole=&quot;false&quot;" />
+  <Menu border="ture" bordersize="1" bordercolor="0xffbababa">
+      <MenuElement name="setpassword" height="26" width="113" text="密码重置"/>
+	  <MenuElement height="1" >
+  	  <VerticalLayout height="1">
+  		<Control bkcolor="0xffe6ebf0" height="1"/>
+  	  </VerticalLayout>
+	  </MenuElement>
+      <MenuElement name="exitlogin" height="26" minwidth="113" text="退出登录"/>
+  </Menu>
+</Window>

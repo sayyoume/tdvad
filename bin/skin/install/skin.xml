@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="600,375"  caption="0,0,0,175" roundcorner="1,1" >
+  <Font name="Segoe UI" size="13" bold="true" id="0"/>
+  <Font name="Segoe UI" size="13"  id="1"/>
+  <Font name="Segoe UI" size="16"  bold="true" id="2"/>
+  <Font name="Segoe UI" size="12"  default="true" id="3"/>
+  <Font name="Segoe UI" size="40"  bold="true" id="4"/>
+  <Font name="Segoe UI" size="12"  id="5"/>
+  <VerticalLayout  name="rootvertical" bkimage="install\bk.png">
+    <!--标题栏-->
+    <HorizontalLayout inset="0,18,25,0"  height="50">
+        <Control />
+        <Button name="minbtn" width="20" tooltip="最小化" height="20" normalimage="file='main\min.png' source='0,0,20,20'" hotimage="file='main\min.png' source='20,0,40,20'" pushedimage="file='main\min.png' source='40,0,60,20'"/>      
+        <Control width="10"/>
+        <Button name="closebtn" width="20" tooltip="关闭" height="20" normalimage="file='main\close.png' source='0,0,20,20'" hotimage="file='main\close.png' source='20,0,40,20'" pushedimage="file='main\close.png' source='40,0,60,20'"/>
+    </HorizontalLayout> <!--标题栏end-->
+    <VerticalLayout name ="page1" visible="true">
+        <Control height="30"/>
+        <HorizontalLayout height="100">
+            <Label text="单板自动测试产线" textcolor="0xffffffff" font="4" align="center"/>
+        </HorizontalLayout>
+        <HorizontalLayout height="60">
+            <Label text="CRSC" textcolor="0xffffffff" font="2" align="center"/>
+        </HorizontalLayout>
+        <HorizontalLayout  height="80" inset="200 0 0 0">
+              <Button name="btnInstall" width="200" font="2" text="开始安装" textcolor="0xffffffff" maxwidth="270"  maxheight="50" normalimage="file='Install\button.png' source='0,0,90,50' corner='30,20,30,20'" hotimage="file='Install\button.png' source='90,0,180,90' corner='30,20,30,20'" pushedimage="file='Install\button.png' source='180,0,270,50' corner='30,20,30,20'" disabledimage="file='Install\button.png' source='270,0,360,50' corner='30,20,30,20'" />
+        </HorizontalLayout>
+        <!--协议-->
+        <HorizontalLayout height="50" inset="20,10,0,0" >
+            <VerticalLayout width="100" inset="0 2 0 5" >
+              <Control />
+               <CheckBox name="install_checkbox" textcolor="0xffffffff" selected="true" textpadding="15,5,0,0" font="4" text=" 已接受并阅读" align="left" valign="top" normalimage="file='common\check_all.png' source='0,0,14,14' dest='0,5,14,19'" selectedimage="file='common\check_all.png' source='14,0,28,14' dest='0,5,14,19'" disabledimage="file='common\check_all.png' source='42,0,56,14' dest='0,5,14,19'" font="5"/>
+            </VerticalLayout>
+            <Control width="5" />
+            <VerticalLayout inset="0,13,0,0">
+              <Button width="100" name="licenseprotocol" align="left" text="{u}服务协议{/u}" font="5"  textcolor="0xffffffff" showhtml="true"/>
+            </VerticalLayout>
+            <Control />
+            <VerticalLayout width="140"  inset="0 8 0 0">
+              <CheckBox name="page1_btnadvanced"  align="right" textpadding="0,0,30,0" text="自定义安装" textcolor="0xffffffff" selected="true"  normalimage="file='Common\triangwhite.png' source='6,0,12,4' dest='113,10,119,14'" selectedimage="file='Common\triangwhite.png' source='0,0,6,4' dest='113,10,119,14'"/>
+            </VerticalLayout>
+        </HorizontalLayout>
+        <VerticalLayout  height="46">
+            <HorizontalLayout  height="46" inset="20 10 30 5" >
+              <HorizontalLayout width="70">
+                <Label text="安装目录" textcolor="0xffffffff" font="3"/>
+              </HorizontalLayout>
+              <Edit height="30" text="C:\Program Files (x86)" width="420" bordercolor="0xff4886ff" nativebkcolor="0xff33323e" textcolor="0xffffffff" bordersize="1" name="editpath" bkimage="file='Install\kuang.png' source='0,0,30,30' corner='1,1,1,1'" font="1"/>
+              <Control />
+              <HorizontalLayout width="30" bkimage="file='Install\kuang.png' source='0,0,30,30' corner='0,1,1,1'" inset="3 3 0 0">
+                <Button name="btnpath" maxwidth="24" maxheight="24" width="24" normalimage="file='Install\open.png' source='0,0,30,28' corner='5,5,5,5'" hotimage="file='Install\open.png' source='0,0,30,28' corner='5,5,5,5'" pushedimage="file='UGInstall\open.png' source='0,0,30,28' corner='5,5,5,5'" />
+              </HorizontalLayout>
+            </HorizontalLayout>
+        </VerticalLayout>
+    </VerticalLayout>    
+    <VerticalLayout name="page2" visible="false" height="346">
+          <Control height="50"/>
+          <VerticalLayout height="207" inset="0 0 0 0">
+              <HorizontalLayout height="100">
+                  <Label text="单板自动测试产线" textcolor="0xffffffff" font="4" align="center"/>
+              </HorizontalLayout>
+              <HorizontalLayout height="60">
+                  <Label text="正在安装...." textcolor="0xffffffff" font="2" align="center"/>
+              </HorizontalLayout>
+          </VerticalLayout>
+          <Control height="10" />
+          <HorizontalLayout height="25" inset="20 0 0 5">
+            <Text name="page2_textprocess" text=" 1%  " width="400" textcolor="0xffffffff" font="0" />
+          </HorizontalLayout>
+          <Progress  name="page2_progress" height="16" min="0" max="100" value="15"  foreimage="file='install\progress_fore.png'  corner='2 0 15 0'"/>
+          <Control />
+          <Control height="20"/>
+    </VerticalLayout>
+  </VerticalLayout>
+</Window>

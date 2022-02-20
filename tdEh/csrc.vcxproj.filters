@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="view">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="controls">
+      <UniqueIdentifier>{41b966f5-582f-4ad9-8fe6-c9bedc7e1b4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pop">
+      <UniqueIdentifier>{1947a1fc-c14a-4579-8898-7f9b57ca2081}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="view\MainDlg.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\StringConvertion.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\data.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="view\userLoginView.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\md5\MD5.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\json\json_reader.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\json\json_value.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\json\json_writer.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\safequeue\safequeue.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\tinyxml\tinyxml2.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\base64.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\code_page.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+    <ClCompile Include="base\safequeue\safequeuestation.cpp">
+      <Filter>view</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="view\MainDlg.h">
+      <Filter>view</Filter>
+    </ClInclude>
+    <ClInclude Include="curl\curl.h" />
+    <ClInclude Include="curl\curlver.h" />
+    <ClInclude Include="curl\easy.h" />
+    <ClInclude Include="curl\mprintf.h" />
+    <ClInclude Include="curl\multi.h" />
+    <ClInclude Include="curl\stdcheaders.h" />
+    <ClInclude Include="curl\system.h" />
+    <ClInclude Include="curl\typecheck-gcc.h" />
+    <ClInclude Include="curl\urlapi.h" />
+    <ClInclude Include="base\StringConvertion.h" />
+    <ClInclude Include="base\data.h" />
+    <ClInclude Include="view\userLoginView.h" />
+    <ClInclude Include="base\md5\MD5.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="base\minidump.h" />
+    <ClInclude Include="base\json\assertions.h" />
+    <ClInclude Include="base\json\autolink.h" />
+    <ClInclude Include="base\json\config.h" />
+    <ClInclude Include="base\json\features.h" />
+    <ClInclude Include="base\json\forwards.h" />
+    <ClInclude Include="base\json\json.h" />
+    <ClInclude Include="base\json\json_batchallocator.h" />
+    <ClInclude Include="base\json\json_tool.h" />
+    <ClInclude Include="base\json\reader.h" />
+    <ClInclude Include="base\json\value.h" />
+    <ClInclude Include="base\json\version.h" />
+    <ClInclude Include="base\json\writer.h" />
+    <ClInclude Include="preaddlib.h" />
+    <ClInclude Include="base\safestl\safemap.h" />
+    <ClInclude Include="base\safequeue\safequeue.h" />
+    <ClInclude Include="base\tinyxml\tinyxml2.h" />
+    <ClInclude Include="tdcommon.h" />
+    <ClInclude Include="base\base64.h" />
+    <ClInclude Include="base\code_page.h" />
+    <ClInclude Include="base\safequeue\safequeuestation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base\json\json_internalarray.inl" />
+    <None Include="base\json\json_internalmap.inl" />
+    <None Include="base\json\json_valueiterator.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="tdEg.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tdeh.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

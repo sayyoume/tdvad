@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="1200,700"  caption="0,0,0,40" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1"><!--sizebox="4,4,6,6" 可以拖动边框改变窗口大小-->
+  <Font name="微软雅黑" size="12" default="true" id="0"/>
+  <Font name="微软雅黑" size="14" id="1"/>
+  <Font name="微软雅黑" size="20" id="2"/>
+  <Font name="微软雅黑" size="12" bold="true" id="3"/>
+  <Font name="微软雅黑" size="16" id="4"/>
+  <Font name="微软雅黑" size="18"  id="5"/>
+  <Font name="微软雅黑" size="20" id="6" bold="true"/>
+  
+  <Default name="VScrollBar" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbhotimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbpushedimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; bknormalimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkhotimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkpushedimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot;" dropbox="font=&quot;0&quot; "/>
+
+  <VerticalLayout bkcolor="0xff0b1328"  inset="1,1,1,1">
+      <!--标题-->
+      <HorizontalLayout name="main_backcolor" height="60" inset="8,0,8,0" bkimage="main\title_bk.png">
+          <VerticalLayout width="52"  inset="0,15,0,0" mouse="false" >
+              <Control height="27" bkimage="file='Common\logo.png'" mouse="false"/>
+          </VerticalLayout>
+          <Control width="10"/>
+          <HorizontalLayout inset="5,0,0,0">
+             <Label textcolor="0xff0de7a5" text="用户管理" font="6"/>
+          </HorizontalLayout>
+          <Control />
+          <HorizontalLayout width="40" padding="0,15,20,0">
+            <Control />
+            <Button name="closebtn" width="14" height="14" normalimage="file='login\loginwinclose.png' source='0,0,14,14'" hotimage="file='login\loginwinclose.png' source='14,0,28,14'" pushedimage="file='login\loginwinclose.png' source='28,0,42,14'"/>
+          </HorizontalLayout>
+      </HorizontalLayout> 
+      <Control height="20"/>
+      <VerticalLayout inset="20,0,20,20">
+        <VerticalLayout bkcolor="0xff151e3e"> 
+          <!--表头-->
+        	<HorizontalLayout height="50" inset="90,0,0,0">
+              <Label text="用户名"   width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="35"/>
+              <Label text="密码"   width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="35"/>
+              <Label text="工号"  width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="20"/>
+              <Label text="部门"    width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="20"/>
+              <Label text="姓名" width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="40"/>
+              <Label text="电话"   width="100" textcolor="0xff8694b6" font="5"/>
+              <Control width="30"/>
+              <Label text="角色"    width="100" textcolor="0xff8694b6" font="5"/>
+          </HorizontalLayout>
+          <HorizontalLayout inset="0,0,0,0" height="500">
+            <VerticalLayout name ="task_item"  align="center" width="1120" vscrollbar="true" >
+            </VerticalLayout>
+          </HorizontalLayout>
+        	<HorizontalLayout height="200"  borderround="2,2" inset="50,0,0,10">
+              <Label name="usercount" text="用户数：20" font="0" textcolor="0xffffffff" font="4" height="24"/>
+              <Control />
+              <HorizontalLayout height="40" inset="0,0,50,0">
+                <Control />
+                <Button name="btn_task_add" text="增加账号" textcolor="#0xff000000"  height="32"  width="80" align="hcenter" normalimage="file='common\btn_search.png' source='0,0,80,32' corner='20,3,20,3'" hotimage="file='common\btn_search.png' source='80,0,160,32' corner='20,3,20,3'" pushedimage="file='common\btn_search.png' source='160,0,240,32' corner='20,3,20,3'" font="1"/>
+              </HorizontalLayout>
+          </HorizontalLayout>
+        </VerticalLayout>  
+      </VerticalLayout>
+  </VerticalLayout>
+</Window>

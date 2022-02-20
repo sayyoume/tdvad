@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window  caption="0,0,0,50" mininfo="129,40" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1">
+  <Font name="Segoe UI" size="12" default="true" id="0"/>
+  <VerticalLayout>
+    <VerticalLayout bkcolor="0xff363441" bordercolor="0xff258c99" bordersize="2" inset="2 2 2 2" name="menufirst" visible="true" mouse="false">
+      <Control height="10"/>
+      <HorizontalLayout name="horziont_1_1" height="24" mouse="true">
+        <Button name="btn_menu1_1"  text="数据1" textcolor="0xffffffff" />
+      </HorizontalLayout>
+      <HorizontalLayout name="horziont_1_2" height="24" mouse="true">
+        <Button name="btn_menu1_2" text="数据1" textcolor="0xffffffff" />
+      </HorizontalLayout>
+       <HorizontalLayout name="horziont_1_3" height="24"  mouse="true">
+        <Button name="btn_menu1_3" text="数据1" textcolor="0xffffffff" />
+      </HorizontalLayout>
+       <HorizontalLayout name="horziont_1_4" height="24"  mouse="true">
+        <Button name="btn_menu1_4" text="数据1" textcolor="0xffffffff" />
+      </HorizontalLayout>   
+    </VerticalLayout>
+    <VerticalLayout name="menusecond" bkcolor="0xff363441" bordercolor="0xff258c99" bordersize="2" inset="2 2 2 2" visible="false" mouse="false">
+      <Control height="10"/>
+      <HorizontalLayout name="horziont_2_1" height="24" mouse="true">
+        <Button name="btn_menu2_1"  text="数据2" textcolor="0xffffffff" />
+      </HorizontalLayout>
+      <HorizontalLayout name="horziont_2_2" height="24" mouse="true">
+        <Button name="btn_menu2_2" text="数据2" textcolor="0xffffffff" />
+      </HorizontalLayout>
+       <HorizontalLayout name="horziont_2_3" height="24"  mouse="true">
+        <Button name="btn_menu2_3" text="数据2" textcolor="0xffffffff" />
+      </HorizontalLayout>
+       <HorizontalLayout name="horziont_2_4" height="24"  mouse="true">
+        <Button name="btn_menu2_4" text="数据2" textcolor="0xffffffff" />
+      </HorizontalLayout>   
+    </VerticalLayout>
+  </VerticalLayout>  
+</Window>

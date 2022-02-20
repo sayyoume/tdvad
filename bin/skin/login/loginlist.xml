@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window name="screenwindow" size="242,30" mininfo="242,30" showshadow="true" shadowsize="4" shadowposition="0,0" roundcorner="1,1">
+	<Font name="微软雅黑" size="20" id="1"/>
+	
+	 <Default name="VScrollBar" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbhotimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbpushedimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; bknormalimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkhotimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkpushedimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot;" />
+	 
+	<VerticalLayout  bkcolor="0xfff9fbfe" bordercolor="0xffc2c7ce">
+		<VerticalLayout name="login_temp_list" vscrollbar="true" inset="0,0,1,0">
+		</VerticalLayout>
+	</VerticalLayout>
+</Window>

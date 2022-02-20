@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="360,240" caption="0,0,0,50" mininfo="360,240">
+  <Font name="Arial" size="14" id="0"/>
+  <Font name="Arial" size="16" id="1"/>
+  <VerticalLayout  bkcolor="0xfff9fbfe" bordercolor="0xffc2c7ce" bordersize="1" >
+	<HorizontalLayout height="40" >
+		<VerticalLayout width="24" padding="15,8,0,8" >
+			<Control width="24" height="24" bkimage="file='RatChet\set\set_logo.png'" />
+		</VerticalLayout>
+        <Label name="labl_title" text="操作提示" textpadding="6,5,0,0"  align="left" height="45" textcolor="0xff000000" font="0" />
+        <Control />
+        <HorizontalLayout width="14">
+			<Control />
+			<Button name="btn_close" maxwidth="14" maxheight="14" normalimage="file='common\close.png' source='0,0,14,14'" hotimage="file='common\close.png' source='14,0,28,14'" pushedimage="file='common\close.png' source='28,0,42,14'" padding="0,2,0,0" />
+        </HorizontalLayout>
+	</HorizontalLayout> 
+    <HorizontalLayout height="1">
+		<Control width="15"/>
+		<Control bkcolor="0xffc2c7ce" height="1"/>
+		<Control width="15"/>
+	</HorizontalLayout>
+    <HorizontalLayout>
+		<HorizontalLayout width="74" padding="28 0 0 0">
+			<VerticalLayout >
+				<Control />
+					<Control name="control_show" width="46" height="46" bkimage="file='Common\warning.png'"  />
+				<Control />
+			</VerticalLayout>
+		</HorizontalLayout>
+		<HorizontalLayout  padding="-24 -5 0 0">
+			<VerticalLayout >
+				<Control />
+				<Text name="txt_info" text="云知声会议系统" font="0" textcolor="#FF333333" />
+				<Control />
+			</VerticalLayout>
+		</HorizontalLayout>
+    </HorizontalLayout>
+	<HorizontalLayout height="1">
+		<Control width="15"/>
+		<Control bkcolor="0xffc2c7ce" height="1"/>
+		<Control width="15"/>
+	</HorizontalLayout>
+    <HorizontalLayout height="55" >
+		<Control />
+		<Button width="50" height="28" name="btn_second" padding="0,13,0,0" enabled="true" align="center"  font="0" normalimage="file='Common\cancel_btn.png' source='0,0,50,28'" hotimage="file='Common\cancel_btn.png' source='50,0,100,28'" pushedimage="file='Common\cancel_btn.png' source='100,0,150,28'" visible="false"/>
+		<Button width="50" height="28" name="btn_first" padding="10,13,24,0" enabled="true" align="center"  font="0" normalimage="file='Common\ok_btn.png' source='0,0,50,28'" hotimage="file='Common\ok_btn.png' source='50,0,100,28'" pushedimage="file='Common\ok_btn.png' source='100,0,150,28'" visible="false"/>
+    </HorizontalLayout> 
+  </VerticalLayout>
+</Window>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+	<Font name="微软雅黑" size="14" id="1"/>
+    <HorizontalLayout name="horizont_item_root" height="30" bordersize="1,0,2,2" bordercolor="0xffe8e8e8" >
+		<Label name="temp_item_name" mouse="true" float="true" pos="24,0,240,30" align="left" valign="vcenter" font="1" endellipsis="true" tooltip="" textcolor="0xfe666666"/>
+		<Button name="temp_item_button_joincon" visible="true" showhtml="true" align="center" valign="vcenter" width="16" pos="200,8,216,24" float="true" normalimage="file='RatChet\login\loginitemclose.png' source='0,0,16,16'" hotimage="file='RatChet\login\loginitemclose.png' source='16,0,32,16'" pushedimage="file='RatChet\login\loginitemclose.png' source='32,0,48,16'"/>
+	</HorizontalLayout>
+</Window>

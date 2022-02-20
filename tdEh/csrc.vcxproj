@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{B7C537CF-4E34-40B4-AC4B-587EE0AA8558}</ProjectGuid>
+    <RootNamespace>blueSeo</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>tdEg</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)bin</OutDir>
+    <IncludePath>$(SolutionDir)\Duilib;$(SolutionDir)\csrc\base\jsoncpp;$(SolutionDir)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)bin;$(SolutionDir)lib;$(SolutionDir)lib\Debug;$(SolutionDir)lib\Debug\camera;$(LibraryPath)</LibraryPath>
+    <TargetName>$(ProjectName)D</TargetName>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)bin</OutDir>
+    <IncludePath>$(SolutionDir)\UI\Duilib;$(SolutionDir)\UI\DuiLibEx;$(SolutionDir)\csrc\base\jsoncpp;$(SolutionDir)\csrc\base\;$(SolutionDir)\include;$(SolutionDir)\include\zxing;$(SolutionDir)\include\libharu;$(SolutionDir)\include\libevent2.1.12\include;$(SolutionDir)\include\libevent2.1.12\WIN32-Code;$(SolutionDir)\include\camera;$(SolutionDir)\include\modbus;$(SolutionDir)\include\zbar;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)bin;$(SolutionDir)lib;$(SolutionDir)lib\Release;$(SolutionDir)lib\Release\camera;$(LibraryPath)</LibraryPath>
+    <IntDir>$(SolutionDir)obj\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <PreprocessorDefinitions>CURL_STATICLIB;SQLITE_ENABLE_COLUMN_METADATA;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;DLLBUILD;HPDF_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <PreprocessorDefinitions>CURL_STATICLIB;SQLITE_ENABLE_COLUMN_METADATA;_CRT_SECURE_NO_WARNINGS;NO_ICONV=1;GLOG_NO_ABBREVIATED_SEVERITIES;GOOGLE_GLOG_DLL_DECL=;DLLBUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="base\base64.cpp" />
+    <ClCompile Include="base\code_page.cpp" />
+    <ClCompile Include="base\data.cpp" />
+    <ClCompile Include="base\json\json_reader.cpp" />
+    <ClCompile Include="base\json\json_value.cpp" />
+    <ClCompile Include="base\json\json_writer.cpp" />
+    <ClCompile Include="base\md5\MD5.cpp" />
+    <ClCompile Include="base\safequeue\safequeue.cpp" />
+    <ClCompile Include="base\safequeue\safequeuestation.cpp" />
+    <ClCompile Include="base\StringConvertion.cpp" />
+    <ClCompile Include="base\tinyxml\tinyxml2.cpp" />
+    <ClCompile Include="view\MainDlg.cpp" />
+    <ClCompile Include="view\userLoginView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\base64.h" />
+    <ClInclude Include="base\code_page.h" />
+    <ClInclude Include="base\data.h" />
+    <ClInclude Include="base\json\assertions.h" />
+    <ClInclude Include="base\json\autolink.h" />
+    <ClInclude Include="base\json\config.h" />
+    <ClInclude Include="base\json\features.h" />
+    <ClInclude Include="base\json\forwards.h" />
+    <ClInclude Include="base\json\json.h" />
+    <ClInclude Include="base\json\json_batchallocator.h" />
+    <ClInclude Include="base\json\json_tool.h" />
+    <ClInclude Include="base\json\reader.h" />
+    <ClInclude Include="base\json\value.h" />
+    <ClInclude Include="base\json\version.h" />
+    <ClInclude Include="base\json\writer.h" />
+    <ClInclude Include="base\md5\MD5.h" />
+    <ClInclude Include="base\minidump.h" />
+    <ClInclude Include="base\safequeue\safequeue.h" />
+    <ClInclude Include="base\safequeue\safequeuestation.h" />
+    <ClInclude Include="base\safestl\safemap.h" />
+    <ClInclude Include="base\StringConvertion.h" />
+    <ClInclude Include="base\tinyxml\tinyxml2.h" />
+    <ClInclude Include="curl\curl.h" />
+    <ClInclude Include="curl\curlver.h" />
+    <ClInclude Include="curl\easy.h" />
+    <ClInclude Include="curl\mprintf.h" />
+    <ClInclude Include="curl\multi.h" />
+    <ClInclude Include="curl\stdcheaders.h" />
+    <ClInclude Include="curl\system.h" />
+    <ClInclude Include="curl\typecheck-gcc.h" />
+    <ClInclude Include="curl\urlapi.h" />
+    <ClInclude Include="preaddlib.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="tdcommon.h" />
+    <ClInclude Include="view\MainDlg.h" />
+    <ClInclude Include="view\userLoginView.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base\json\json_internalarray.inl" />
+    <None Include="base\json\json_internalmap.inl" />
+    <None Include="base\json\json_valueiterator.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="tdEg.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="tdeh.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

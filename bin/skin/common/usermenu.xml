@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window  caption="0,0,0,50" mininfo="70,30" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1">
+  <Font name="Segoe UI" size="12" default="true" id="0"/>
+  <Font name="Segoe UI" size="16" default="true" id="1"/>
+  <VerticalLayout>
+    <VerticalLayout bkcolor="0xff363441" bordercolor="0xff258c99" bordersize="1" inset="2 2 2 2" name="menufirst" visible="true" mouse="false" inset="20,0,0,0">
+      <Control height="10"/>
+      <HorizontalLayout height="30">
+        <Label name="text1" text="姓名: wanggang" textcolor="0xffffffff" align="left" font="1" />
+      </HorizontalLayout>
+      <HorizontalLayout height="30">
+        <Label name="text2" text="工单: 1234" textcolor="0xffffffff" align="left" font="1" />  
+      </HorizontalLayout>
+      
+      <!--<HorizontalLayout name="horziont_1_1" height="24" mouse="true">
+        <Button name="btn_menu1_1"  text="修改密码" textcolor="0xffd3d3d3" hottextcolor="0xffffffff" />
+      </HorizontalLayout>
+      <HorizontalLayout name="horziont_1_2" height="24" mouse="true">
+        <Button name="btn_menu1_2" text="切换账号" textcolor="0xffd3d3d3" hottextcolor="0xffffffff" />
+      </HorizontalLayout>
+       <HorizontalLayout name="horziont_1_3" height="24"  mouse="true">
+        <Button name="btn_menu1_3" text="退出" textcolor="0xffd3d3d3" hottextcolor="0xffffffff" />
+      </HorizontalLayout>-->
+    </VerticalLayout>
+  </VerticalLayout>  
+</Window>

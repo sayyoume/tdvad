@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="360,420" caption="0,0,0,50" mininfo="100,100" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1">
+  <Font name="微软雅黑" size="16" id="0"/>
+  <Font name="微软雅黑" size="20" id="1" bold="true"/>
+  <Font name="微软雅黑" size="15" id="2"/>
+  <Font name="微软雅黑" size="14" id="3"/>
+  <Font name="微软雅黑" size="14" id="4" bold="true"/>
+  <Font name="微软雅黑" size="16" id="5" bold="true"/>
+  <Font name="微软雅黑" size="30" id="6" bold="true"/>
+  <VerticalLayout  bordercolor="0xffc2c7ce" bordersize="1" bkimage="login\bk.png">
+	<HorizontalLayout height="50" inset="10,0,0,0">
+		 <VerticalLayout width="70"  inset="0,15,0,0" mouse="false" >
+                <Control height="27" bkimage="file='Common\logo.png'" mouse="false"/>
+        </VerticalLayout>
+        <Control />
+        <HorizontalLayout width="40" padding="0,15,20,0">
+			<Control />
+			<Button name="closelogin_btn" width="14" height="14" normalimage="file='login\loginwinclose.png' source='0,0,14,14'" hotimage="file='login\loginwinclose.png' source='14,0,28,14'" pushedimage="file='login\loginwinclose.png' source='28,0,42,14'"/>
+        </HorizontalLayout>
+	</HorizontalLayout> 
+	<Control height="1" bkcolor="0xff004e98"/>
+	<Control height="15"/>
+	<HorizontalLayout height="60" >
+		<Label text="单板自动测试产线" textcolor="0xffffffff" font="6" align="center"/>
+	</HorizontalLayout>
+	<HorizontalLayout height="3" inset="50,0,50,0">
+		<Control bkimage="login/spot.png" />
+	</HorizontalLayout>
+	<VerticalLayout name="loginwarningver" height="35" width="240" padding="60,12,0,0" ><!--0xffff6666-->
+		<HorizontalLayout name="loginwarninghor" height="26" visible="false" >
+			<Control bkimage="file='login\warn.png'" height="16" width="16" padding="10,6,0,0"/>
+			<Label name="describtion" text="请检查用户名或密码是否正确" textpadding="10,0,0,0" align="left" valign="center" textcolor="0xffed171f" font="3" />
+		</HorizontalLayout>
+	</VerticalLayout>
+	<VerticalLayout height="170" padding="60,5,0,0">
+		<VerticalLayout height="35" >
+			<HorizontalLayout height="35">
+				<HorizontalLayout name="outlineborder" height="35" width="240" bkimage="file='kuang.png' source='0,0,30,30' corner='1,1,1,1'">
+					<Edit  tiptext="请输入用户名" tiptextcolor="0xffd3d3d3" textcolor="0xffffffff"  inset="4 5 0 4" height="45" bordercolor="0xff4886ff" bordersize="1" bkcolor="0xff33323e" name="loginname" font="3" textpadding="25,1,20,0" nativebkcolor="0xff33323e"/>
+					<Label height="16" width="16" bkimage="file='login\user.png'" padding="5,8,2,0" float="true" pos="5,10,21,26"/>
+				</HorizontalLayout>
+			</HorizontalLayout>
+		</VerticalLayout>
+		<VerticalLayout height="35" padding="0,18,0,0">
+			<HorizontalLayout height="35">
+				<HorizontalLayout height="35" width="240" bkimage="file='kuang.png' source='0,0,30,30' corner='1,1,1,1'">
+					<Edit  tiptext="请输入密码" tiptextcolor="0xffd3d3d3" textcolor="0xffffffff"  inset="4 5 0 4" height="45" bordercolor="0xff4886ff" bordersize="1" bkcolor="0xff33323e" name="login_userpassword" font="3" textpadding="25,1,30,0" nativebkcolor="0xff33323e"/>
+					<Label height="16" width="16" bkimage="file='login\password.png'" padding="5,8,2,0" float="true" pos="5,10,21,26"/>
+					<!--<Label height="16" width="16" bkimage="file='login\password.png'" padding="5,8,2,0" />
+					<Control width="3"/>
+					<Edit  tiptext="请输入密码" tiptextcolor="0xffd3d3d3" textcolor="0xffffffff"  password="true" inset="4 8 0 4" height="45" bordercolor="0xff4886ff" bordersize="1" bkcolor="0xff33323e" name="login_userpassword" font="3" textpadding="5,1,25,0" nativebkcolor="0xff33323e"/>-->
+					<Button name="btn_loginshow" normalimage="file='login\show.png'" hotimage="file='login\show.png'" pushedimage="file='login\show.png'" float="true" pos="210,10,226,26"/> 
+				</HorizontalLayout>
+			</HorizontalLayout>
+		</VerticalLayout>
+		<VerticalLayout height="36" padding="0,15,0,0">
+			<Button name="btn_loginok" width="240" height="36" text= "登陆" tooltip="登陆" textcolor="0xffffffff" font="0" normalimage="file='login\loginbtn.png' source='0,0,36,36' corner='10,10,10,10'" hotimage="file='login\loginbtn.png' source='36,0,72,36' corner='10,10,10,10'" pushedimage="file='login\loginbtn.png' source='72,0,108,36' corner='10,10,10,10'" /> 
+		</VerticalLayout>
+		<HorizontalLayout height="35" padding="0,10,0,0">
+			<!--<CheckBox name="btn_rememberme" width="70" height="18" text="记住我" textcolor="0xff778899" font="3" enabled="true" align="left" normalimage="file='login\loginchoose.png' source='0,0,18,18' dest='0,0,18,18'" hotimage="file='login\loginchoose.png' source='18,0,36,18' dest='0,0,18,18'" selectedimage="file='login\loginchoose.png' source='36,0,54,18' dest='0,0,18,18'" textpadding="25,0,0,2" />-->
+			 <Control />
+			<Button name="btn_forgetpassword" width="65" height="20" text= "忘记密码" tooltip="忘记密码" textpadding="0,0,0,5" textcolor="0xff4895ff" hottextcolor="0xff48dbff" pushedtextcolor="0xff2f6eeb" font="3" /> 
+			<Control width="60"/>
+		</HorizontalLayout>
+	</VerticalLayout>
+	
+  </VerticalLayout>
+</Window>

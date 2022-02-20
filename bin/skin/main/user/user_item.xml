@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <HorizontalLayout minheight="40" height="45" inset="0,8,0,8">
+
+    <Label name="item_1" align="center" valign="left" width="25" textcolor="0xffffffff" mouse="false"  padding="10,0,0,0" font="4"/>
+    <Control width="10"/>
+    <!--<CheckBox name="item_checkbox" float="false" pos="10,13,24,27" width="14" normalimage="file='main\select.png' source='0,0,14,14'" selectedimage="file='main\select.png' source='14,0,28,14'" padding="7,5,0,0"/>
+    <Control width="15"/>
+    <Control  bkcolor="0xffa5a5a5" width="1"/>-->
+    <!--用户名-->
+    <Label name="item_2" width="130" align="center" valign="center" textcolor="0xffffffff" mouse="false" padding="10,0,0,0" font="4"/>
+    
+    <!--密码-->
+    <Label name="item_3"  width="120" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4"/>
+   
+    <!--工号-->
+    <Label name="item_4" width="130" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4"/>
+  
+    <!--部门-->
+    <Label name="item_5" width="120" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4" />
+   
+    <Control width="20"  mouse="false"/>
+    <!--备注-->
+    <Label name="item_6" width="120" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4" />
+    
+     <!--电话-->
+    <Label name="item_7" width="120" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4" />
+  
+    <Control width="30"  mouse="false"/>
+    <!--角色-->
+    <Label name="item_8" width="110" align="center" valign="center" textcolor="0xffffffff" mouse="false" font="4" />
+   
+    <Control width="20"  mouse="false"/>
+    <Button name="item_btn"  width="40" showhtml="true"  text="{f 4}{u}{c #007acc}编辑{/c}{/u}{/f}" />
+    <Control width="5"/>
+    <Button name="item_btn_delete"  width="40" showhtml="true"  text="{f 4}{u}{c #007acc}删除{/c}{/u}{/f}" />
+    <Control width="3" bkcolor="0xff151e3e" name="item_user_first" float="true" pos="0,2,3,43"/>
+  </HorizontalLayout>
+</Window>

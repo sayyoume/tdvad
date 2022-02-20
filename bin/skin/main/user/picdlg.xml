@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="500,600"  caption="0,0,0,40" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1" >
+  <!--sizebox="4,4,6,6" 可以拖动边框改变窗口大小-->
+  <Font name="微软雅黑" size="12" default="true" id="0"/>
+  <Font name="微软雅黑" size="14" id="1"/>
+  <Font name="微软雅黑" size="20" id="2"/>
+  <Font name="微软雅黑" size="12" bold="true" id="3"/>
+  <Font name="微软雅黑" size="16" id="4"/>
+  <Font name="微软雅黑" size="18"  id="5"/>
+  <Font name="微软雅黑" size="20" id="6" bold="true"/>
+  
+  <Default name="VScrollBar" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbhotimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbpushedimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; bknormalimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkhotimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkpushedimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot;" dropbox="font=&quot;0&quot; "/>
+
+  <VerticalLayout bkcolor="0xfff8fbff" bordersize="1" bordercolor="0xff004e98" inset="1,1,1,1">
+      <!--标题-->
+      <HorizontalLayout height="50" inset="10,0,0,0" bkcolor="0xff272b37">
+          <VerticalLayout width="50" height="65" inset="0,8,0,0" mouse="false" >
+              <Control width="80" height="40" bkimage="file='Common\logo1.png'" mouse="false"/>
+          </VerticalLayout>
+          <HorizontalLayout inset="5,8,0,0">
+             <Label textcolor="0xffd3d3d3" text="增加用户" font="6" name="title"/>
+          </HorizontalLayout>
+          <Control />
+          <HorizontalLayout width="40" padding="0,15,20,0">
+            <Control />
+            <Button name="closebtn" width="14" height="14" normalimage="file='login\loginwinclose.png' source='0,0,14,14'" hotimage="file='login\loginwinclose.png' source='14,0,28,14'" pushedimage="file='login\loginwinclose.png' source='28,0,42,14'"/>
+          </HorizontalLayout>
+      </HorizontalLayout> 
+      <Control height="1" bkcolor="0xff004e98"/>
+      <!--标题以下部分-->
+      <VerticalLayout inset="70,50,0,0" bkcolor="0xff242834">
+      </VerticalLayout>
+  </VerticalLayout>
+</Window>

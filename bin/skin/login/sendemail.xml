@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="450,300" caption="0,0,0,50" mininfo="450,300" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1">
+  <Font name="微软雅黑" size="16" id="0"/>
+  <Font name="微软雅黑" size="20" id="1" bold="true"/>
+  <Font name="微软雅黑" size="15" id="2"/>
+  <Font name="微软雅黑" size="14" id="3"/>
+  <VerticalLayout  bkcolor="0xfff9fbfe" bordercolor="0xffc2c7ce" bordersize="1" >
+	<HorizontalLayout height="45" >
+        <Label name="poptitle" text="忘记密码" textpadding="6,3,0,0"  padding="15,12,0,9" align="left" height="45" textcolor="0xff778899" font="0" />
+        <Control />
+        <HorizontalLayout width="12" padding="0,18,0ss,15">
+			<Control />
+			<Button name="closebtn" width="12" height="12" normalimage="file='RatChet\set\close.png' source='0,0,12,12'" hotimage="file='RatChet\set\close.png' source='12,0,24,12'" pushedimage="file='RatChet\set\close.png' source='24,0,36,12'"/>
+        </HorizontalLayout>
+	</HorizontalLayout> 
+    <HorizontalLayout height="1">
+		<Control width="20"/>
+		<Control bkcolor="0xffc2c7ce" height="1"/>
+		<Control width="20"/>
+	</HorizontalLayout>
+	<Control />
+	<HorizontalLayout height="25" >
+	    <Control />
+		<Label text="请将您的用户名" width="105" textcolor="0xff5a646e" font="2" />
+		<Button name="btn_changebacklisten" width="55" text= "发邮件" textcolor="0xff4895ff" hottextcolor="0xff48dbff" pushedtextcolor="0xff2f6eeb" font="2" /> 
+		<Label text="给管理员申请找回密码，或者" width="194" textcolor="0xff5a646e" font="2" />
+		<Control />
+	</HorizontalLayout>
+	<HorizontalLayout height="25">
+		<Control />
+		<Label text="直接联系管理员。" width="354" textcolor="0xff5a646e" font="2" />
+		<Control />
+	</HorizontalLayout>
+	<Control />
+	<HorizontalLayout height="1">
+		<Control width="20"/>
+		<Control bkcolor="0xffc2c7ce" height="1"/>
+		<Control width="20"/>
+	</HorizontalLayout>
+	<HorizontalLayout name="screen_btn" height="70" inset="0,8,20,0" visible="true">
+	    <control />
+		<Button name="btn_second" width="64" height="36" padding="0,13,0,0" text= "取消" tooltip="取消" textcolor="0xff5e5e5e" font="0" normalimage="file='RatChet\login\loginclose.png' source='0,0,36,36' corner='5,5,5,5'" hotimage="file='RatChet\login\loginclose.png' source='36,0,72,36' corner='5,5,5,5'" pushedimage="file='RatChet\login\loginclose.png' source='72,0,108,36' corner='5,5,5,5'" />
+		<Button name="btn_first" width="82" height="36" padding="10,13,0,0" text= "发邮件" tooltip="发邮件" textcolor="0xffe8f1ff" font="0" normalimage="file='RatChet\login\loginbtn.png' source='0,0,36,36' corner='10,10,10,10'" hotimage="file='RatChet\login\loginbtn.png' source='36,0,72,36' corner='10,10,10,10'" pushedimage="file='RatChet\login\loginbtn.png' source='72,0,108,36' corner='10,10,10,10'" /> 
+    </HorizontalLayout>	
+  </VerticalLayout>
+</Window>

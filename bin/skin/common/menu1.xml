@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window>
+  <Font name="Segoe UI" size="12" bold="false" default="true" id="0"/>
+  <Font name="Segoe UI" size="12" bold="true" id="1"/>
+  <Default name="Menu" value="itemtextpadding=&quot;35,0,0,0&quot;hole=&quot;false&quot;" />
+  <Menu name="menu_language" bkcolor="0xff242834" bordercolor="0xff258c99" bordersize="2" inset="2 2 2 2"  itemtextcolor="0xffffffff" itembkcolor="0xff363441" itemhotbkcolor="0xff403e4b">
+    <!--<MenuElement height="28" bkimage="file='Common\china.png' source='0,0,25,16' dest='4,5,29,21'"  name="menu_china" text="简体中文"/>-->
+    <MenuElement height="28" name="menu_hk" text="数据1    " />
+    <MenuElement height="28" name="menu_english" text="数据2    "/>
+    <MenuElement height="28" name="menu_portugal" text="数据3    "/>
+    <MenuElement height="28" name="menu_spain" text="数据4    "/>
+    <MenuElement height="1"/>
+</Menu>
+</Window>

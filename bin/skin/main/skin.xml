@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window size="1360,750"  sizebox="4,4,6,6" mininfo="1360,750" caption="0,0,0,64" showshadow="true" shadowsize="5" shadowposition="0,0" roundcorner="1,1"><!--sizebox="4,4,6,6" 可以拖动边框改变窗口大小-->
+  <Font name="微软雅黑" size="12" default="true" id="0"/>
+  <Font name="微软雅黑" size="14" id="1"/>
+  <Font name="微软雅黑" size="20" id="2"/>
+  <Font name="微软雅黑" size="12" bold="true" id="3"/>
+  <Font name="微软雅黑" size="16" id="4"/>
+  <Font name="微软雅黑" size="18"  id="5"/>
+  <Font name="微软雅黑" size="20" id="6" bold="true"/>
+  <Font name="微软雅黑" size="10" id="7"/>
+    <Font name="微软雅黑" size="16" bold="true" id="8"/>
+  
+  <Default name="VScrollBar" value="width=&quot;8&quot; showbutton1=&quot;false&quot; showbutton2=&quot;false&quot; thumbnormalimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbhotimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; thumbpushedimage=&quot;file='common\Scrollbars.png' source='0,0,8,12' corner='2,3,2,3'&quot; bknormalimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkhotimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot; bkpushedimage=&quot;file='common\Scrollbars.png' source='0,12,8,24' corner='2,3,2,3'&quot;" dropbox="font=&quot;0&quot; "/>
+
+  <VerticalLayout bkcolor="0xff0b1328">
+      <!--标题  bkcolor="0xff272b37" -->
+        <HorizontalLayout name="main_backcolor" height="60" inset="8,0,10,0" bkimage="main\title_bk.png">
+       		  <VerticalLayout width="30"  inset="0,15,0,0" mouse="false" >
+               <Control height="30" bkimage="file='Common\logo.png'" mouse="false"/>
+            </VerticalLayout>
+            <Control mouse="false"/> 
+	          <HorizontalLayout inset="0,13,0,0">
+                <Control />
+                <Button name="minbtn" width="20" tooltipid="190" height="20" normalimage="file='main\min.png' source='0,0,20,20'" hotimage="file='main\min.png' source='20,0,40,20'" pushedimage="file='main\min.png' source='40,0,60,20'"/>      
+                <Control width="10"/>
+                <Button name="maxbtn" width="20" tooltipid="794" height="20" normalimage="file='main\max.png' source='0,0,20,20'" hotimage="file='main\max.png' source='20,0,40,20'" pushedimage="file='main\max.png' source='40,0,60,20'"/>         
+         
+                <Button name="restorebtn" width="20" tooltipid="795" height="20" normalimage="file='main\restore.png' source='0,0,20,20'" hotimage="file='main\restore.png' source='20,0,40,20'" pushedimage="file='main\restore.png' source='40,0,60,20'" visible="false"/>         
+                <Control width="10"/>
+                <Button name="btn_detail_close" width="20" tooltipid="191" height="20" normalimage="file='main\close.png' source='0,0,20,20'" hotimage="file='main\close.png' source='20,0,40,20'" pushedimage="file='main\close.png' source='40,0,60,20'"/>
+        	  </HorizontalLayout>
+        </HorizontalLayout>
+        <Control height="30" />
+        <!--标题以下部分-->	
+        <VerticalLayout inset="20,0,20,20">        
+        </VerticalLayout>  
+  </VerticalLayout>
+</Window>
