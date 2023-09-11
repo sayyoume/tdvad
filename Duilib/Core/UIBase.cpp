@@ -406,25 +406,29 @@ bool CWindowWnd::RegisterSuperclass()
 
 LRESULT CALLBACK CWindowWnd::__WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
-    CWindowWnd* pThis = NULL;
+    CWindowWnd* pThis = nullptr;
     if( uMsg == WM_NCCREATE ) {
         LPCREATESTRUCT lpcs = reinterpret_cast<LPCREATESTRUCT>(lParam);
         pThis = static_cast<CWindowWnd*>(lpcs->lpCreateParams);
         pThis->m_hWnd = hWnd;
-        ::SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LPARAM>(pThis));
+        ::SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LPARAM>(pThis));	
     } 
     else {
         pThis = reinterpret_cast<CWindowWnd*>(::GetWindowLongPtr(hWnd, GWLP_USERDATA));
-        if( uMsg == WM_NCDESTROY && pThis != NULL ) {
+        if( uMsg == WM_NCDESTROY && pThis != nullptr) {
             LRESULT lRes = ::CallWindowProc(pThis->m_OldWndProc, hWnd, uMsg, wParam, lParam);
-            ::SetWindowLongPtr(pThis->m_hWnd, GWLP_USERDATA, 0L);
+            LONG_PTR result = ::SetWindowLongPtr(pThis->m_hWnd, GWLP_USERDATA, 0L);
+			if (result == 0 && GetLastError() != ERROR_SUCCESS) {
+				return S_FALSE;
+			}
+
             if( pThis->m_bSubclassed ) pThis->Unsubclass();
-            pThis->m_hWnd = NULL;
+            pThis->m_hWnd = nullptr;
             pThis->OnFinalMessage(hWnd);
             return lRes;
         }
     }
-    if( pThis != NULL ) {
+    if( pThis != nullptr) {
         return pThis->HandleMessage(uMsg, wParam, lParam);
     } 
     else {

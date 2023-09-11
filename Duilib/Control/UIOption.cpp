@@ -234,10 +234,11 @@ Label_ForeImage:
 			if( m_sText.IsEmpty() ) return;
 			int nLinks = 0;
 			RECT rc = m_rcItem;
-			rc.left += m_rcTextPadding.left;
-			rc.right -= m_rcTextPadding.right;
-			rc.top += m_rcTextPadding.top;
-			rc.bottom -= m_rcTextPadding.bottom;
+			RECT rcTextPadding = GetTextPadding();
+			rc.left += rcTextPadding.left;
+			rc.right -= rcTextPadding.right;
+			rc.top += rcTextPadding.top;
+			rc.bottom -= rcTextPadding.bottom;
 
 			if( m_bShowHtml )
 				CRenderEngine::DrawHtmlText(hDC, m_pManager, rc, m_sText, IsEnabled()?m_dwTextColor:m_dwDisabledTextColor, \

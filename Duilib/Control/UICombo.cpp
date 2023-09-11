@@ -116,10 +116,10 @@ LRESULT CComboWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
         if( pDefaultAttributes ) {
             m_pLayout->ApplyAttributeList(pDefaultAttributes);
         }
-        m_pLayout->SetInset(CDuiRect(1, 1, 1, 1));
-        m_pLayout->SetBkColor(0xFFFFFFFF);
+       // m_pLayout->SetInset(CDuiRect(1, 1, 1, 1));
+        m_pLayout->SetBkColor(0xFF494949);
         m_pLayout->SetBorderColor(0xFFC6C7D2);
-        m_pLayout->SetBorderSize(1);
+        //m_pLayout->SetBorderSize(1);
         m_pLayout->SetAutoDestroy(false);
         m_pLayout->EnableScrollBar();
         m_pLayout->ApplyAttributeList(m_pOwner->GetDropBoxAttributeList());
@@ -571,7 +571,9 @@ void CComboUI::SetDropBoxAttributeList(LPCTSTR pstrList)
 
 SIZE CComboUI::GetDropBoxSize() const
 {
-    return m_szDropBox;
+	SIZE szDropBox= m_szDropBox;
+	if (m_pManager != NULL) return m_pManager->GetDPIObj()->Scale(szDropBox);
+	return szDropBox;
 }
 
 void CComboUI::SetDropBoxSize(SIZE szDropBox)
@@ -1017,10 +1019,11 @@ void CComboUI::PaintText(HDC hDC)
 	if (!m_bShowText) return;
 
     RECT rcText = m_rcItem;
-    rcText.left += m_rcTextPadding.left;
-    rcText.right -= m_rcTextPadding.right;
-    rcText.top += m_rcTextPadding.top;
-    rcText.bottom -= m_rcTextPadding.bottom;
+	RECT rcTextPadding = GetTextPadding();
+    rcText.left += rcTextPadding.left;
+    rcText.right -= rcTextPadding.right;
+    rcText.top += rcTextPadding.top;
+    rcText.bottom -= rcTextPadding.bottom;
 
     if( m_iCurSel >= 0 ) {
         CControlUI* pControl = static_cast<CControlUI*>(m_items[m_iCurSel]);

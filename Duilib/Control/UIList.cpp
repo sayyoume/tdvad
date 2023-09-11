@@ -1925,10 +1925,10 @@ void CListLabelElementUI::DrawItemText(HDC hDC, const RECT& rcItem)
     int nLinks = 0;
     RECT rcText = rcItem;
     RECT rcTextPadding = GetManager()->GetDPIObj()->Scale(pInfo->rcTextPadding);
-    rcText.left += pInfo->rcTextPadding.left;
-    rcText.right -= pInfo->rcTextPadding.right;
-    rcText.top += pInfo->rcTextPadding.top;
-    rcText.bottom -= pInfo->rcTextPadding.bottom;
+    rcText.left += rcTextPadding.left;
+    rcText.right -= rcTextPadding.right;
+    rcText.top += rcTextPadding.top;
+    rcText.bottom -= rcTextPadding.bottom;
 
     if( pInfo->bShowHtml )
         CRenderEngine::DrawHtmlText(hDC, m_pManager, rcText, m_sText, iTextColor, \

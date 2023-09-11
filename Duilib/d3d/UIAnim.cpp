@@ -102,7 +102,7 @@ bool CAnimationSpooler::Init(HWND hWnd)
                                 TRUE);
    if( FAILED(Hr) ) return false;
    D3DPRESENT_PARAMETERS d3dpp = { 0 };
-   d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;; //D3DSWAPEFFECT_FLIP
+   d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD; //D3DSWAPEFFECT_FLIP
    d3dpp.Windowed = TRUE;
    d3dpp.hDeviceWindow = hWnd;
    d3dpp.BackBufferCount = 1;

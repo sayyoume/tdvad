@@ -478,7 +478,7 @@ namespace DuiLib
 			else goto Label_ForeImage;
 		}
 		else if( (m_uButtonState & UISTATE_FOCUSED) != 0 ) {
-			if (DrawImage(hDC, m_diFocused)) goto Label_ForeImage;;
+			if (DrawImage(hDC, m_diFocused)) goto Label_ForeImage;
 		}
 
 		if ( GetFadeAlphaDelta() > 0 ) {

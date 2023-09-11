@@ -105,9 +105,10 @@ void CShadowUI::Create(CPaintManagerUI* pPaintManager)
 
 }
 
+static std::map<HWND, CShadowUI *> s_Shadowmap;
+
 std::map<HWND, CShadowUI *>& CShadowUI::GetShadowMap()
 {
-	static std::map<HWND, CShadowUI *> s_Shadowmap;
 	return s_Shadowmap;
 }
 

@@ -1762,7 +1762,7 @@ CDPI* DuiLib::CPaintManagerUI::GetDPIObj()
 void CPaintManagerUI::ResetDPIAssets()
 {
 	//RemoveAllDrawInfos();
-	//RemoveAllImages();;
+	//RemoveAllImages();
 
 	for (int it = 0; it < m_ResInfo.m_CustomFonts.GetSize(); it++) {
 		TFontInfo* pFontInfo = static_cast<TFontInfo*>(m_ResInfo.m_CustomFonts.Find(m_ResInfo.m_CustomFonts[it]));
